@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Search, ShoppingBag, Star, ArrowRight, Play, Heart } from 'lucide-react';
+import { Play, Star, ArrowRight, Heart } from 'lucide-react';
 
-const LuxoraHome = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
@@ -62,54 +61,6 @@ const LuxoraHome = () => {
 
   return (
     <div className="min-h-screen bg-white text-black">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold tracking-tight">LUXORA</h1>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#" className="hover:text-gray-600 transition-colors font-medium">Home</a>
-                <a href="#" className="hover:text-gray-600 transition-colors font-medium">Products</a>
-                <a href="#" className="hover:text-gray-600 transition-colors font-medium">Collections</a>
-                <a href="#" className="hover:text-gray-600 transition-colors font-medium">About</a>
-                <a href="#" className="hover:text-gray-600 transition-colors font-medium">Contact</a>
-              </div>
-            </div>
-
-            {/* Right side icons */}
-            <div className="flex items-center space-x-4">
-              <Search className="h-5 w-5 hover:text-gray-600 cursor-pointer transition-colors" />
-              <ShoppingBag className="h-5 w-5 hover:text-gray-600 cursor-pointer transition-colors" />
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden"
-              >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:bg-gray-50">Home</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:bg-gray-50">Products</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:bg-gray-50">Collections</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:bg-gray-50">About</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium hover:bg-gray-50">Contact</a>
-            </div>
-          </div>
-        )}
-      </nav>
-
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
@@ -266,52 +217,8 @@ const LuxoraHome = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">LUXORA</h3>
-              <p className="text-gray-400 mb-4">
-                Redefining beauty with luxury cosmetics that celebrate your unique style.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Products</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Collections</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Customer Care</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Shipping Info</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Returns</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Size Guide</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Facebook</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">YouTube</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Luxora Cosmetics. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
 
-export default LuxoraHome;
+export default HomePage;
